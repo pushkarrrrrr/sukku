@@ -1,0 +1,115 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    // Tailwind configuration for custom, romantic colors and fonts
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'love-pink': '#FFC0CB', // Soft Pink
+            'love-cream': '#FAF9F6', // Off-White/Cream background
+            'love-dark': '#333333', // Deep text color
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            // Adding an elegant font for titles and quotes
+            serif: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+</script>
+
+<title>A Story for My Love</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Load Inter and Playfair Display fonts from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+    /* Custom font class for titles and quotes */
+    .font-serif-elegant {
+        font-family: 'Playfair Display', serif;
+    }
+</style>
+
+<body class="bg-love-cream text-love-dark min-h-screen">
+
+    <!-- Header Section: The Title and Introduction -->
+    <header class="text-center py-16 px-4 bg-love-pink/50">
+        <h1 class="font-serif-elegant text-5xl md:text-7xl font-bold text-love-dark tracking-wider">
+            Our Story: A Digital Memory Jar
+        </h1>
+        <p class="mt-4 text-xl text-love-dark/80">
+            A place for the videos, photos, and quotes that define **us**.<br>For my amazing partner, [Girlfriend's Name].
+        </p>
+    </header>
+
+    <!-- Main Content Grid: Memory Timeline/Scroll -->
+    <main class="max-w-4xl mx-auto p-6 space-y-20">
+
+        <!-- Memory Section 1: The Beginning (Quote & Photo) -->
+        <section class="flex flex-col md:flex-row items-center bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+            <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0">
+                <!-- Quote from Content Prompt 1 -->
+                <blockquote class="text-3xl font-serif-elegant italic text-love-dark leading-relaxed">
+                    "From the moment I first saw you, I knew my life was about to become infinitely more beautiful."
+                </blockquote>
+                <p class="mt-4 text-sm text-right text-love-dark/60">— Chapter I: The Day We Met</p>
+            </div>
+            <div class="md:w-1/2 w-full rounded-xl overflow-hidden shadow-lg">
+                <!-- PHOTO Placeholder: Replace with an actual URL of your first photo together -->
+                <img src="https://placehold.co/600x400/FFC0CB/love-dark?text=Our+First+Memory" 
+                     alt="Placeholder for First Photo" class="w-full h-auto object-cover transition duration-500 transform hover:scale-105">
+            </div>
+        </section>
+
+        <!-- Memory Section 2: Adventures & Videos (Video & Text) -->
+        <section class="flex flex-col-reverse md:flex-row items-center bg-love-pink/20 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+            <div class="md:w-1/2 w-full rounded-xl overflow-hidden shadow-lg">
+                <!-- VIDEO Placeholder: Replace the content inside this div with your video embed code (e.g., from YouTube or a simple <video> tag) -->
+                <div class="aspect-video bg-gray-300 flex items-center justify-center text-love-dark/70">
+                    <p class="p-4 text-center">
+                        [**VIDEO EMBED CODE GOES HERE**]
+                        <br>
+                        This video of our trip to [Place Name] makes me smile every time.
+                    </p>
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pl-8 mb-6 md:mb-0">
+                <h2 class="font-serif-elegant text-4xl font-bold mb-4">The Adventure Continues</h2>
+                <p class="text-lg">
+                    We've shared so many laughs and wild ideas. This video always reminds me of your incredible sense of humor and how you make every moment an adventure.
+                </p>
+                <div class="mt-4 text-xl p-3 bg-white rounded-lg shadow-inner">
+                    <span class="font-bold text-love-pink">&hearts; A Quote for You:</span> "I love that feeling when I don't need to smile to be happy."
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Section 3: The Daily Love (Photo Gallery) -->
+        <section class="text-center p-8 rounded-2xl bg-white shadow-xl">
+            <h2 class="font-serif-elegant text-4xl font-bold mb-8">The Comfort of Everyday</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- PHOTO GALLERY: Replace src attributes with your photo URLs -->
+                <img src="https://placehold.co/400x400/333333/FFFFFF?text=Date+Night" alt="Photo 1" class="w-full h-auto object-cover rounded-lg shadow-md transition duration-300 hover:opacity-80">
+                <img src="https://placehold.co/400x400/FFC0CB/333333?text=Home+Life" alt="Photo 2" class="w-full h-auto object-cover rounded-lg shadow-md transition duration-300 hover:opacity-80">
+                <img src="https://placehold.co/400x400/FAF9F6/333333?text=Silly+Selfie" alt="Photo 3" class="w-full h-auto object-cover rounded-lg shadow-md transition duration-300 hover:opacity-80">
+            </div>
+            <!-- Quote from Content Prompt 2 -->
+            <p class="mt-8 text-xl italic text-love-dark/70">
+                "It's the small, quiet moments that I cherish the most—our morning coffee, the way you hum when you cook. That's the real magic."
+            </p>
+        </section>
+
+        <!-- Final Message -->
+        <section class="text-center py-16">
+            <h2 class="font-serif-elegant text-4xl md:text-5xl font-bold mb-4 text-love-pink">To Be Continued... Forever.</h2>
+            <p class="text-lg mb-6">
+                This website is just a snapshot. The best part of our story is still being written, with you.
+            </p>
+            <div class="text-2xl font-bold">
+                With all my love,<br>[Your Name]
+            </div>
+        </section>
+        
+    </main>
+    
+</body>

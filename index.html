@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Story for My Love</title>
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="dns-prefetch" href="//images.unsplash.com">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Fonts - optimized loading with only needed weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons - load synchronously for better reliability -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) - load synchronously -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS for image carousel - load synchronously -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Inline critical CSS to ensure content visibility -->
+    <style>
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #FFC0CB 0%, #FF69B4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .main-content {
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="heart-loader">
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>Loading our story...</p>
+    </div>
+    
+    <!-- Immediate loading screen fix -->
+    <script>
+        // Immediate execution - hide loading screen after 1.5 seconds
+        setTimeout(function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+                document.body.classList.add('fade-in');
+                console.log('Loading screen hidden by inline script');
+            }
+        }, 1500);
+        
+        // Additional fallback
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                    loadingScreen.style.display = 'none';
+                    console.log('Loading screen force-hidden by window.load fallback');
+                }
+            }, 500);
+        });
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>Our Story</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#beginning" class="nav-link">Beginning</a></li>
+                <li><a href="#adventures" class="nav-link">Adventures</a></li>
+                <li><a href="#memories" class="nav-link">Memories</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#future" class="nav-link">Future</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-hearts">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="hero-title">Our Story: A Digital Memory Jar</h1>
+            <p class="hero-subtitle">A place for the videos, photos, and quotes that define <strong>us</strong>.</p>
+            <p class="hero-dedication">For my amazing partner, <span class="highlight">[Girlfriend's Name]</span></p>
+            <button class="cta-button" onclick="scrollToSection('beginning')">
+                <span>Begin Our Journey</span>
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- The Beginning Section -->
+        <section id="beginning" class="memory-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Chapter I: The Beginning</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="memory-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="memory-content">
+                        <div class="memory-text">
+                            <blockquote class="quote">
+                                "From the moment I first saw you, I knew my life was about to become infinitely more beautiful."
+                            </blockquote>
+                            <cite class="quote-author">— The Day We Met</cite>
+                            <div class="memory-date">
+                                <i class="fas fa-calendar-heart"></i>
+                                <span>A moment that changed everything</span>
+                            </div>
+                        </div>
+                        <div class="memory-media">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&h=400&fit=crop&crop=faces" 
+                                     alt="Our First Memory" class="memory-image" loading="lazy" decoding="async">
+                                <div class="image-overlay">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventures Section -->
+        <section id="adventures" class="memory-section alt-bg">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Chapter II: The Adventure Continues</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="memory-card reverse" data-aos="fade-left" data-aos-delay="200">
+                    <div class="memory-content">
+                        <div class="memory-media">
+                            <div class="video-container">
+                                <div class="video-placeholder">
+                                    <i class="fas fa-play-circle"></i>
+                                    <p>Click to play our adventure video</p>
+                                    <small>This video of our trip to [Place Name] makes me smile every time.</small>
+                                </div>
+                                <!-- Replace with actual video embed -->
+                                <video class="memory-video" controls style="display: none;">
+                                    <source src="your-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <div class="memory-text">
+                            <h3>Adventures & Laughter</h3>
+                            <p>We've shared so many laughs and wild ideas. This video always reminds me of your incredible sense of humor and how you make every moment an adventure.</p>
+                            <div class="love-note">
+                                <i class="fas fa-heart"></i>
+                                <span><strong>A Quote for You:</strong> "I love that feeling when I don't need to smile to be happy."</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memories Gallery Section -->
+        <section id="memories" class="memory-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Chapter III: The Comfort of Everyday</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="gallery-container" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Swiper -->
+                    <div class="swiper memory-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop" alt="Date Night">
+                                    <div class="gallery-overlay">
+                                        <h4>Date Night</h4>
+                                        <p>Perfect evenings together</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=400&fit=crop" alt="Home Life">
+                                    <div class="gallery-overlay">
+                                        <h4>Home Life</h4>
+                                        <p>Cozy moments at home</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=400&fit=crop" alt="Silly Selfie">
+                                    <div class="gallery-overlay">
+                                        <h4>Silly Selfie</h4>
+                                        <p>Being goofy together</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=400&h=400&fit=crop" alt="Adventure">
+                                    <div class="gallery-overlay">
+                                        <h4>Adventures</h4>
+                                        <p>Exploring the world</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    
+                    <div class="gallery-quote" data-aos="fade-up" data-aos-delay="500">
+                        <blockquote>
+                            "It's the small, quiet moments that I cherish the most—our morning coffee, the way you hum when you cook. That's the real magic."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Our Beautiful Gallery</h2>
+                    <p class="section-subtitle">Every moment with you is worth capturing</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <!-- Gallery Filter Tabs -->
+                <div class="gallery-filters" data-aos="fade-up" data-aos-delay="200">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                        All
+                    </button>
+                    <button class="filter-btn" data-filter="photos">
+                        <i class="fas fa-camera"></i>
+                        Photos
+                    </button>
+                    <button class="filter-btn" data-filter="videos">
+                        <i class="fas fa-video"></i>
+                        Videos
+                    </button>
+                    <button class="filter-btn" data-filter="selfies">
+                        <i class="fas fa-heart"></i>
+                        Selfies
+                    </button>
+                    <button class="filter-btn" data-filter="adventures">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Adventures
+                    </button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" data-aos="fade-up" data-aos-delay="400">
+                    
+                    <!-- Photo Items -->
+                    <div class="gallery-item-large" data-category="photos selfies">
+                        <div class="media-container">
+                            <img src="assets/photos/photo1.jpg" alt="Beautiful moment together" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Beautiful Moment</h4>
+                                    <p>A perfect day together</p>
+                                    <span class="media-date">March 15, 2024</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="photos adventures">
+                        <div class="media-container">
+                            <img src="assets/photos/photo2.jpg" alt="Adventure together" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Adventure Time</h4>
+                                    <p>Exploring new places</p>
+                                    <span class="media-date">February 20, 2024</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Items -->
+                    <div class="gallery-item" data-category="videos">
+                        <div class="media-container video-container">
+                            <video poster="assets/videos/video1-poster.jpg" loading="lazy">
+                                <source src="assets/videos/video1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Funny Moments</h4>
+                                    <p>Laughing together</p>
+                                    <span class="media-date">January 10, 2024</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="photos selfies">
+                        <div class="media-container">
+                            <img src="assets/photos/photo3.jpg" alt="Cute selfie" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Cute Selfie</h4>
+                                    <p>Just being us</p>
+                                    <span class="media-date">December 25, 2023</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item-wide" data-category="photos adventures">
+                        <div class="media-container">
+                            <img src="assets/photos/photo4.jpg" alt="Sunset together" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Sunset Magic</h4>
+                                    <p>Golden hour with you</p>
+                                    <span class="media-date">November 18, 2023</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="videos">
+                        <div class="media-container video-container">
+                            <video poster="assets/videos/video2-poster.jpg" loading="lazy">
+                                <source src="assets/videos/video2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Dancing Together</h4>
+                                    <p>Our favorite song</p>
+                                    <span class="media-date">October 5, 2023</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more gallery items as needed -->
+                    <div class="gallery-item" data-category="photos selfies">
+                        <div class="media-container">
+                            <img src="assets/photos/photo5.jpg" alt="Morning coffee" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Morning Coffee</h4>
+                                    <p>Perfect start to the day</p>
+                                    <span class="media-date">September 12, 2023</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="photos adventures">
+                        <div class="media-container">
+                            <img src="assets/photos/photo6.jpg" alt="Beach day" loading="lazy">
+                            <div class="media-overlay">
+                                <div class="media-info">
+                                    <h4>Beach Day</h4>
+                                    <p>Sun, sand, and smiles</p>
+                                    <span class="media-date">August 22, 2023</span>
+                                </div>
+                                <div class="media-actions">
+                                    <button class="action-btn" onclick="openMediaModal(this)">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <button class="action-btn" onclick="downloadMedia(this)">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Load More Button -->
+                <div class="gallery-actions" data-aos="fade-up" data-aos-delay="600">
+                    <button class="load-more-btn" onclick="loadMoreMedia()">
+                        <i class="fas fa-plus"></i>
+                        Load More Memories
+                    </button>
+                    <button class="upload-btn" onclick="openUploadModal()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Add New Memory
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Modal -->
+        <div id="upload-modal" class="modal upload-modal">
+            <div class="modal-content upload-content">
+                <div class="modal-header">
+                    <h3>Add New Memory</h3>
+                    <span class="close-modal" onclick="closeUploadModal()">&times;</span>
+                </div>
+                <div class="upload-area">
+                    <div class="upload-zone" id="upload-zone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h4>Drag & Drop your photos or videos here</h4>
+                        <p>or click to browse files</p>
+                        <input type="file" id="file-input" multiple accept="image/*,video/*" style="display: none;">
+                    </div>
+                    <div class="upload-preview" id="upload-preview"></div>
+                </div>
+                <div class="upload-form">
+                    <input type="text" placeholder="Memory title..." id="memory-title">
+                    <textarea placeholder="Describe this beautiful moment..." id="memory-description"></textarea>
+                    <select id="memory-category">
+                        <option value="photos">Photo</option>
+                        <option value="videos">Video</option>
+                        <option value="selfies">Selfie</option>
+                        <option value="adventures">Adventure</option>
+                    </select>
+                    <input type="date" id="memory-date">
+                    <button class="save-memory-btn" onclick="saveMemory()">
+                        <i class="fas fa-heart"></i>
+                        Save Memory
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Media Modal -->
+        <div id="media-modal" class="modal media-modal">
+            <div class="modal-content media-modal-content">
+                <span class="close-modal" onclick="closeMediaModal()">&times;</span>
+                <div class="media-display">
+                    <img id="modal-media-img" src="" alt="" style="display: none;">
+                    <video id="modal-media-video" controls style="display: none;">
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+                <div class="media-details">
+                    <h3 id="modal-media-title"></h3>
+                    <p id="modal-media-description"></p>
+                    <span id="modal-media-date"></span>
+                </div>
+                <div class="media-navigation">
+                    <button class="nav-btn prev-btn" onclick="previousMedia()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next-btn" onclick="nextMedia()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Section -->
+        <section id="future" class="memory-section final-section">
+            <div class="container">
+                <div class="final-message" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>To Be Continued... Forever.</h2>
+                    <p>This website is just a snapshot. The best part of our story is still being written, with you.</p>
+                    <div class="signature">
+                        <p>With all my love,</p>
+                        <span class="name">[Your Name]</span>
+                    </div>
+                    <div class="love-counter">
+                        <i class="fas fa-heart beating-heart"></i>
+                        <span id="love-counter">Loading...</span>
+                        <small>moments of love and counting...</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Scripts - async loading for better performance -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
